@@ -62,7 +62,7 @@ public class FIFOArray {
     }
     
     public int indexOf(String element) {
-        for (int i = head; i <= tail; i += 1 % this.fila.length) {
+        for (int i = head; i <= tail; i = (i + 1) % this.fila.length) {
             if (this.fila[i].equals(element))
                 return i;
         }
@@ -71,7 +71,7 @@ public class FIFOArray {
     
     public String toString() {
         String out = "";
-        for (int i = head; i <= tail; i += 1 % this.fila.length) {
+        for (int i = head; i <= tail; i = (i + 1) % this.fila.length) {
             out += this.fila[i] + " ";
         }
         return out.trim();
